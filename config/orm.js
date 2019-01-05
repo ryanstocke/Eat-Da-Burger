@@ -2,8 +2,10 @@ var connection = require("./connection.js");
 
 var orm = {
 	selectAll: function(table, cb) {
+		console.log("Starting ORM");
 		var queryString = "SELECT * FROM ??";
 		connection.query(queryString, [table], function(err, result) {
+			console.log("Finished Inserting, sending results back");
 			cb(result);
 		});
 	},

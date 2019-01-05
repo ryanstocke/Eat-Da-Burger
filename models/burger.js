@@ -3,7 +3,9 @@ var orm = require("../config/orm.js");
 
 var burger = {
     all: function(cb) {
+      console.log("Starting my career Modeling");
         orm.selectAll("burgers", function(res) {
+          console.log("Back in model, sending results back");
           cb(res);
         });
       },
@@ -13,7 +15,7 @@ var burger = {
           cb(res);
         });
       },
-      devour: function(objColVals, condition, cb) {
+      update: function(objColVals, condition, cb) {
         orm.updateOne("burgers", objColVals, condition, function(res) {
           cb(res);
         });
@@ -22,5 +24,5 @@ var burger = {
 }
 
 
-// Export the database functions for the controller (catsController.js).
+// Export the database functions for the controller (burgers_controller.js).
 module.exports = burger;
