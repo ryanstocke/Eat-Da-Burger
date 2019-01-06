@@ -21,13 +21,13 @@ module.exports = {
     create: function(req, res){
         burger.new(function(result){
             // send data back to client 
-            res.render(result)
+            res.json(result)
         }) 
     },
     update: function(req, res){
         burger.update(function(result){
             // send data back to client 
-            res.render(result)
+            res.json(result)
         }) 
     }
 

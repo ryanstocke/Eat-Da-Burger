@@ -13,8 +13,7 @@
             <pre>{{this.id}}. {{this.burger_name}}</pre>
           </div>
           <div class="col-sm-3 text-center">
-            <form method="POST" action="/burgers/update?_method=PUT"
-            class="button-size">
+            <form method="POST" action="/{{this.id}}?_method=PUT" class="button-size">
               <input type="hidden" name="burger_id" type="text"
               value={{this.id}}>
               <br>
@@ -38,7 +37,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 text-center enter_section">
-      <form action="/burgers/create" method="POST">
+      <form class="create-update-form" action="/" method="POST">
         <input type="text" name="burger_name" class="form-control" value="" id="enter_text">
         <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
       </form>
@@ -49,116 +48,3 @@
 </div>
 
 
-
-{{!-- 
-<div class="container">
-    <div class="row">
-        <h1 class="title">
-            Eat Da Burger!
-        </h1>
-    </div>
-    <div class="row">
-        <img alt="burger icon" class="burger-icon" src="assets/img/burger.png">
-        </img>
-    </div>
-    <div class="row">
-        <div class="col s12 m6 l5">
-            <ul class="collection">
-                <div class="not-devoured-group">
-                </div>
-            </ul>
-        </div>
-        <div class="col s12 m6 l5 offset-l2">
-            <ul class="collection">
-                <div class="devoured-group">
-                </div>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12 m6 l3">
-            <form action="/" class="create-form" method="POST">
-                <div class="form-group">
-                    <label for="burg">
-                        Burger:
-                    </label>
-                    <input id="burg" name="burger" type="text">
-                    </input>
-                </div>
-                <br>
-                <button class="waves-effect waves-light btn" type="submit">
-                    Add Burger
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
-{{#each burgers}}
-	{{#if devoured}}
-<li class="collection-item devoured">
-    <input name="id" type="hidden" value="{{this.id}}">
-        <span name="burger-name">
-        </span>
-        {{this.burger_name}}
-    </input>
-</li>
-{{else}}
-<li class="collection-item not-devoured">
-    <form action="/?_method=PUT" class="create-update-form" method="POST">
-        <input name="id" type="hidden" value="{{this.id}}">
-            <div class="row center-vert">
-                <div class="col s6">
-                    <p>
-                        <span name="burger-name">
-                        </span>
-                        {{this.burger_name}}
-                    </p>
-                </div>
-                <div class="col s6 submit-parent">
-                    <button class="secondary-content waves-effect waves-light btn" type="submit">
-                        Devour!
-                    </button>
-                </div>
-            </div>
-        </input>
-    </form>
-</li>
-{{/if}}
-{{/each}}
-<script>
-    $('.devoured').appendTo($('.devoured-group'));
-	$('.not-devoured').appendTo($('.not-devoured-group'));
-</script>
-<style>
-	body {
-		background-color: #ffc06d;
-	}
-    .title {
-		margin-top: 70px;
-		font-family: sans-serif;
-		text-align: center;
-		color: #324996;
-	}
-	
-	.burger-icon {
-		display: block;
-	    margin: auto;
-	}
-	p {
-		font-family: 'Open Sans', sans-serif;
-		vertical-align: middle;
-		line-height: 36px;
-		margin: 0px;
-	}
-	
-	.center-vert {
-		margin: 0px;
-	}
-	li.collection-item.devoured, li.collection-item.not-devoured {
-		background-color: #91cdff;
-	}
-	.devoured-group {
-		text-decoration: line-through;
-		color: grey;
-	}
-</style> --}}
