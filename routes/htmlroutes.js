@@ -15,14 +15,14 @@ router.get("/", function(req, res) {
   });
 
 router.post('/', function(req, res) {
-  burger.new('burger_name', [req.body.burger], function(result) {
+  burger.new('burger_name', req.body.burger, function(result) {
     res.redirect('/');
     console.log(result);
   });
 });
 
 router.put('/', function(req, res) {
-  burger.update('devoured', 1, 'id', [req.body.id], function(result) {
+  burger.update(req.body.id, function(result) {
     res.redirect('/');
     console.log(result);
   });
